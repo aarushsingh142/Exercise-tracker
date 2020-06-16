@@ -14,7 +14,7 @@ const Exercise = props =>(
     </tr>
 )
 
-export default class ListExercise extends Component {
+export default class ExercisesList extends Component {
     constructor(props) {
         super(props);
 
@@ -34,7 +34,7 @@ export default class ListExercise extends Component {
     }
 
     deleteExercise(id){
-        axios.delete('http://localhost:5000/exercises'+ id)
+        axios.delete('http://localhost:5000/exercises/'+ id)
             .then((res) => console.log(res.data));
         this.setState({
             exercises: this.state.exercises.filter(el => el._id !== id)
